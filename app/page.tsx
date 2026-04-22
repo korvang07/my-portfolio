@@ -1,140 +1,140 @@
 import Image from "next/image";
 
-async function getPosts() {
-  const res = await fetch("https://wordpress.org/news/wp-json/wp/v2/posts", {
-    cache: "no-store",
-  });
-  return res.json();
-}
-
-export default async function Home() {
-  const posts = await getPosts();
-
+export default function Home() {
   return (
-    <main style={{
-      fontFamily: "Arial",
-      maxWidth: "1000px",
-      margin: "auto",
-      padding: "20px",
-      backgroundColor: "#f5f7fb",
-      minHeight: "100vh",
-      color: "#111827"
-    }}>
+    <main style={styles.page}>
 
-      {/* NAV */}
-      <nav style={{ display: "flex", justifyContent: "space-between", marginBottom: "40px" }}>
-        <h2>Kor Vang</h2>
-        <div style={{ display: "flex", gap: "15px" }}>
-          <a href="#projects">Projects</a>
-          <a href="#business">Work</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
-
-      {/* HERO WITH IMAGE */}
-      <section style={{ textAlign: "center", marginBottom: "50px" }}>
-        <Image 
+      {/* HERO */}
+      <section style={styles.hero}>
+        <Image
           src="/myimage.png"
           alt="Profile"
-          width={120}
-          height={120}
-          style={{ borderRadius: "50%", marginBottom: "15px" }}
+          width={110}
+          height={110}
+          style={styles.avatar}
         />
-        <h1>Full Stack Developer</h1>
-        <p>WordPress • PHP • React • Next.js</p>
+
+        <h1 style={styles.title}>Kor Vang</h1>
+        <p style={styles.subtitle}>
+          Full Stack Developer • IT Support Specialist
+        </p>
+
+        <p style={styles.tagline}>
+          WordPress • PHP • React • Next.js
+        </p>
       </section>
 
       {/* PROJECTS */}
-<section style={{ marginBottom: "50px" }}>
-  <h2>Projects</h2>
+      <section style={styles.section}>
+        <h2 style={styles.sectionTitle}>Projects</h2>
 
-  <div style={card}>
-    <h3>Business Website Development</h3>
-    <p>
-      Designed and supported small business websites using WordPress, including UI updates,
-      plugin integration, and basic SEO improvements.
-    </p>
-  </div>
-
-  <div style={card}>
-    <h3>Portfolio Website (This Project)</h3>
-    <p>
-      Built a full-stack developer portfolio using Next.js with GitHub deployment and Vercel hosting.
-    </p>
-  </div>
-</section>
-
-      {/* BUSINESS WORK (YOUR REAL EXPERIENCE) */}
-      <section id="business" style={{ marginBottom: "50px" }}>
-        <h2>Client & Business Websites</h2>
-
-        <div style={card}>
-          <h3>Strategic Roofers</h3>
+        <div style={styles.card}>
+          <h3>Portfolio Website</h3>
           <p>
-            Developed and maintained a WordPress business website including design,
-            plugin integration, and performance optimization.
+            Built a full-stack portfolio using Next.js, GitHub, and Vercel deployment
+            with API integration and responsive design.
           </p>
-
-          {/* CLICKABLE LINK */}
-          <a 
-            href="https://strategic-roofers.com/" 
-            target="_blank"
-            style={linkStyle}
-          >
-            View Live Website →
-          </a>
         </div>
 
+        <div style={styles.card}>
+          <h3>Business Website Development</h3>
+          <p>
+            Designed and maintained WordPress websites for small businesses including
+            UI updates, plugin integration, and performance optimization.
+          </p>
+        </div>
       </section>
 
-      {/* EXPERIENCE HIGHLIGHTS */}
-<section style={{ marginBottom: "50px" }}>
-  <h2>Experience Highlights</h2>
+      {/* EXPERIENCE */}
+      <section style={styles.section}>
+        <h2 style={styles.sectionTitle}>Experience</h2>
 
-  <div style={card}>
-    <h3>Information Technology Support Specialist</h3>
-    <p>
-      Provided technical support, troubleshooting, and system assistance in professional environments.
-      Experience includes user support, software issues, account management, and administrative IT operations.
-    </p>
-  </div>
+        <div style={styles.card}>
+          <h3>IT Support Specialist</h3>
+          <p>
+            Provided technical support, troubleshooting, and system assistance in
+            professional environments including user support, software issues,
+            and administrative IT operations.
+          </p>
+        </div>
 
-  <div style={card}>
-    <h3>Web Developer / IT Support (Freelance)</h3>
-    <p>
-      Built and maintained WordPress websites for small businesses, including design updates,
-      plugin management, performance optimization, and client support.
-    </p>
-  </div>
-</section>
+        <div style={styles.card}>
+          <h3>Web Developer / Freelance</h3>
+          <p>
+            Built and maintained WordPress websites for small businesses with
+            focus on design, performance, and client support.
+          </p>
+        </div>
+      </section>
 
       {/* CONTACT */}
-      <section id="contact">
-        <h2>Contact</h2>
-        <div style={card}>
-    <p><b>Email:</b> korvang4@gmail.com</p>
-    <p><b>Phone:</b> (703) 209-4260</p>
-    <p><b>Location:</b> California, USA</p>
-  </div>
+      <section style={styles.section}>
+        <h2 style={styles.sectionTitle}>Contact</h2>
+
+        <div style={styles.card}>
+          <p><b>Email:</b> korvang4@gmail.com</p>
+          <p><b>Phone:</b> (703) 209-4260</p>
+          <p><b>Location:</b> California, USA</p>
+        </div>
       </section>
 
     </main>
   );
 }
 
-/* reusable styles */
-const card = {
-  background: "white",
-  padding: "20px",
-  borderRadius: "10px",
-  boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
-  marginBottom: "20px"
-};
+/* 🎨 STYLES */
+const styles = {
+  page: {
+    fontFamily: "Arial",
+    background: "linear-gradient(to bottom, #eef2ff, #f8fafc)",
+    minHeight: "100vh",
+    padding: "40px",
+    color: "#111827",
+  },
 
-const linkStyle = {
-  display: "inline-block",
-  marginTop: "10px",
-  color: "#2563eb",
-  textDecoration: "none",
-  fontWeight: "bold"
+  hero: {
+    textAlign: "center" as const,
+    marginBottom: "50px",
+  },
+
+  avatar: {
+    borderRadius: "50%",
+    marginBottom: "15px",
+  },
+
+  title: {
+    fontSize: "32px",
+    margin: "10px 0",
+  },
+
+  subtitle: {
+    fontSize: "18px",
+    color: "#4b5563",
+  },
+
+  tagline: {
+    marginTop: "10px",
+    color: "#2563eb",
+    fontWeight: "bold",
+  },
+
+  section: {
+    marginBottom: "40px",
+  },
+
+  sectionTitle: {
+    fontSize: "22px",
+    marginBottom: "15px",
+    borderLeft: "4px solid #2563eb",
+    paddingLeft: "10px",
+  },
+
+  card: {
+    background: "white",
+    padding: "20px",
+    borderRadius: "12px",
+    boxShadow: "0 4px 10px rgba(0,0,0,0.05)",
+    marginBottom: "15px",
+    transition: "0.2s",
+  },
 };
