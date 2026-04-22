@@ -67,6 +67,26 @@ export default function Home() {
         </div>
       </section>
 
+      <section style={styles.section}>
+  <h2 style={styles.sectionTitle}>Client Work</h2>
+
+  <div style={styles.card}>
+    <h3>Strategic Roofers (Tampa, FL)</h3>
+    <p>
+      Built and maintained a WordPress business website including design updates,
+      plugin integration, and performance optimization.
+    </p>
+
+    <a
+      href="https://strategic-roofers.com/"
+      target="_blank"
+      style={{ color: "#2563eb", fontWeight: "bold" }}
+    >
+      View Live Website →
+    </a>
+  </div>
+</section>
+
       {/* CONTACT */}
       <section style={styles.section}>
         <h2 style={styles.sectionTitle}>Contact</h2>
