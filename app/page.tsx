@@ -45,17 +45,24 @@ export default async function Home() {
       </section>
 
       {/* PROJECTS */}
-      <section id="projects" style={{ marginBottom: "50px" }}>
-        <h2>Projects</h2>
+<section style={{ marginBottom: "50px" }}>
+  <h2>Projects</h2>
 
-        <div style={card}>
-          <h3>Headless WordPress Blog</h3>
-          <p>
-            Built a modern web application using WordPress as backend and Next.js frontend.
-            Integrated REST API for dynamic content rendering.
-          </p>
-        </div>
-      </section>
+  <div style={card}>
+    <h3>Business Website Development</h3>
+    <p>
+      Designed and supported small business websites using WordPress, including UI updates,
+      plugin integration, and basic SEO improvements.
+    </p>
+  </div>
+
+  <div style={card}>
+    <h3>Portfolio Website (This Project)</h3>
+    <p>
+      Built a full-stack developer portfolio using Next.js with GitHub deployment and Vercel hosting.
+    </p>
+  </div>
+</section>
 
       {/* BUSINESS WORK (YOUR REAL EXPERIENCE) */}
       <section id="business" style={{ marginBottom: "50px" }}>
@@ -80,23 +87,35 @@ export default async function Home() {
 
       </section>
 
-      {/* LIVE API DATA */}
-      <section style={{ marginBottom: "50px" }}>
-        <h2>Live API Data</h2>
+      {/* EXPERIENCE HIGHLIGHTS */}
+<section style={{ marginBottom: "50px" }}>
+  <h2>Experience Highlights</h2>
 
-        {posts.slice(0, 3).map((post: any) => (
-          <div key={post.id} style={{ marginBottom: "20px" }}>
-            <h3 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-            <div dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} />
-          </div>
-        ))}
-      </section>
+  <div style={card}>
+    <h3>Information Technology Support Specialist</h3>
+    <p>
+      Provided technical support, troubleshooting, and system assistance in professional environments.
+      Experience includes user support, software issues, account management, and administrative IT operations.
+    </p>
+  </div>
+
+  <div style={card}>
+    <h3>Web Developer / IT Support (Freelance)</h3>
+    <p>
+      Built and maintained WordPress websites for small businesses, including design updates,
+      plugin management, performance optimization, and client support.
+    </p>
+  </div>
+</section>
 
       {/* CONTACT */}
       <section id="contact">
         <h2>Contact</h2>
-        <p>Email: korvang4@gmail.com</p>
-        <p>Phone: (703) 209-4260</p>
+        <div style={card}>
+    <p><b>Email:</b> korvang4@gmail.com</p>
+    <p><b>Phone:</b> (703) 209-4260</p>
+    <p><b>Location:</b> California, USA</p>
+  </div>
       </section>
 
     </main>
